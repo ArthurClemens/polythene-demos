@@ -106,6 +106,9 @@ html {
 .result-row {
   border-color: #ddd;
 }
+.header-row {
+  z-index: 2000;
+}
 .pe-button.bordered-button .pe-button__content {
   border-color: #ddd;
 }
@@ -183,6 +186,13 @@ html {
   margin: 0 30px 20px 0;
 }
 
+.pe-rtl .multiple .pe-control.pe-checkbox-control,
+.pe-rtl .multiple .pe-control.pe-radio-control,
+.pe-rtl .multiple .pe-control.pe-switch-control,
+.pe-rtl .multiple .pe-icon-button {
+  margin: 0 0 20px 30px;
+}
+
 .pe-card.on .pe-card__media__dimmer {
   box-shadow: inset 0px 0px 40px rgba(0,0,0,.6);
 }
@@ -206,18 +216,43 @@ html {
   opacity: .85;
 }
 
+.dialog-row .pe-dialog__holder {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.dialog-row .dialog-tests-static.pe-dialog {
+  min-width: initial;
+  padding: 0;
+}
+.dialog-row .dialog-tests-static .pe-dialog-pane {
+  min-width: 180px;
+}
+
 @media (min-width: 320px) {
   .index-list, .results, .footer {
     width: 320px;
   }
 }
 
-@media (min-width: 480px) {
+@media (min-width: 460px) {
   .results {
-    width: 480px;
+    width: 420px;
   }
   .results + .footer {
-    width: 480px;
+    width: 420px;
+  }
+  .result {
+    width: calc(100% - 2 * 20px);
+  }
+}
+
+@media (min-width: 560px) {
+  .results {
+    width: 520px;
+  }
+  .results + .footer {
+    width: 520px;
   }
   .result {
     width: calc(100% - 2 * 20px);
